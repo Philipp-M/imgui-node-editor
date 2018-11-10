@@ -87,6 +87,30 @@ inline bool operator!=(const SafePointerType<Tag>& lhs, const SafePointerType<Ta
     return lhs.Get() != rhs.Get();
 }
 
+template <typename Tag>
+inline bool operator<(const SafePointerType<Tag>& lhs, const SafePointerType<Tag>& rhs)
+{
+    return lhs.Get() < rhs.Get();
+}
+
+template <typename Tag>
+inline bool operator<=(const SafePointerType<Tag>& lhs, const SafePointerType<Tag>& rhs)
+{
+    return lhs.Get() <= rhs.Get();
+}
+
+template <typename Tag>
+inline bool operator>(const SafePointerType<Tag>& lhs, const SafePointerType<Tag>& rhs)
+{
+    return lhs.Get() > rhs.Get();
+}
+
+template <typename Tag>
+inline bool operator>=(const SafePointerType<Tag>& lhs, const SafePointerType<Tag>& rhs)
+{
+    return lhs.Get() >= rhs.Get();
+}
+
 } // namespace Details
 
 struct NodeId final: Details::SafePointerType<NodeId>
